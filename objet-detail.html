@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Détail de l'objet</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gradient-to-r from-blue-600 to-green-500">
+
+  <!-- Navbar -->
+  <nav class="bg-white shadow p-4 flex justify-between items-center">
+    <div class="text-xl font-bold text-green-600">MonLogo</div>
+    <ul class="flex gap-6">
+      <li><a href="index.html" class="hover:text-green-600">Accueil</a></li>
+      <li><a href="propos.html" class="hover:text-green-600">A propos</a></li>
+      <li><a href="contact.html" class="hover:text-green-600">Contact</a></li>
+      <li><a href="profil.html" class="hover:text-green-600">Profil</a></li>
+    </ul>
+  </nav>
+
+  <!-- Détails de l'objet -->
+  <main class="max-w-4xl mx-auto p-6 bg-white mt-10 rounded shadow" id="objet-container">
+    <!-- Contenu dynamique ici -->
+  </main>
+
+  <script>
+    const objets = [
+      {
+        id: 1,
+        titre: "Chaise en bois",
+        description: "Une chaise ancienne mais encore utilisable.",
+        image: "images/ChaiseBois-removebg-preview.png",
+        prix: "5 000 FCFA"
+      },
+      {
+        id: 2,
+        titre: "Télévision 32 pouces",
+        description: "Fonctionne parfaitement, modèle 2018.",
+        image: "images/tv-removebg-preview.png",
+        prix: "35 000 FCFA"
+      },
+      {
+        id: 3,
+        titre: "Cartons de déménagement",
+        description: "Plusieurs cartons solides, à donner.",
+        image: "images/Carton-removebg-preview.png",
+        prix: "Gratuit"
+      }
+    ];
+
+    const params = new URLSearchParams(window.location.search);
+    const objetId = parseInt(params.get("id"));
+    const objet = objets.find(o => o.id === objetId);
+
+    const container = document.getElementById("objet-container");
+
+    if (objet) {
+      container.innerHTML = `
+        <img src="${objet.image}" alt="${objet.titre}" class="w-full h-64 object-cover rounded mb-6">
+        <h1 class="text-3xl font-bold text-green-700">${objet.titre}</h1>
+        <p class="text-gray-600 mt-4">${objet.description}</p>
+        <p class="text-lg font-semibold text-green-800 mt-4">Prix : ${objet.prix}</p>
+        <a href="paiement.html?id=${objet.id}" class="inline-block mt-6 bg-green-600 text-white px-6 py-3 rounded hover:bg-green-700 transition duration-200">Commander cet objet</a>
+      `;
+    } else {
+      container.innerHTML = `
+        <p class="text-center text-red-500 text-lg">Objet introuvable. <a href="liste-objets.html" class="underline text-green-600">Retour à la liste</a></p>
+      `;
+    }
+  </script>
+  <!-- Footer -->
+  <footer class="bg-gray-100 py-6 text-center text-gray-600 text-sm">
+    &copy; 2025 TaPlateforme – Tous droits réservés
+  </footer>
+
+</body>
+</html>

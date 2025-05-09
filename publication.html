@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Publier un objet</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="bg-gradient-to-r from-blue-600 to-green-500" >
+
+  <!-- Navbar -->
+   <!-- Navbar -->
+  <nav class="bg-white shadow p-4 flex justify-between items-center">
+    <div class="text-xl font-bold text-green-600">RecycLe</div>
+    <ul class="flex gap-6">
+      <li><a href="index.html" class="hover:text-green-600">Accueil</a></li>
+      <li><a href="liste_objets.html" class="hover:text-green-600">Objets recyclés</a></li>
+      <li><a href="contact.html" class="hover:text-green-600">Contact</a></li>
+      <li><a href="a-propos.html" class="text-green-600 font-semibold">À propos</a></li>
+    </ul>
+  </nav>
+  
+
+  <section class="publication-section">
+    <div class="form-container">
+      <h1>Publier un objet</h1>
+      <form id="publication-form">
+        <label for="title">Titre de l’objet</label>
+        <input type="text" id="title" required />
+
+        <label for="description">Description</label>
+        <textarea id="description" rows="5" required></textarea>
+
+        <label for="category">Catégorie</label>
+        <select id="category" required>
+          <option value="">-- Choisir une catégorie --</option>
+          <option value="electronique">Électronique</option>
+          <option value="vetements">Vêtements</option>
+          <option value="maison">Maison</option>
+          <option value="autre">Autre</option>
+        </select>
+
+        <label for="photo">Photo</label>
+        <input type="file" id="photo" accept="image/*" required />
+
+        <button type="submit" class="btn-save">Publier</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <!-- Footer -->
+  <footer class="bg-gray-100 py-6 text-center text-gray-600 text-sm">
+    &copy; 2025 TaPlateforme – Tous droits réservés
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mon Profil</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body >
+  <!-- Navbar -->
+
+
+  <!-- Navbar -->
+  <!-- <nav class="bg-white shadow p-4 flex justify-between items-center">
+    <div class="text-xl font-bold text-green-600">RecycLe</div>
+    <ul class="flex gap-6">
+      <li><a href="index.html" class="hover:text-green-600">Accueil</a></li>
+      <li><a href="liste_objets.html" class="hover:text-green-600">Objets recyclés</a></li>
+      <li><a href="contact.html" class="hover:text-green-600">Contact</a></li>
+      <li><a href="a-propos.html" class="text-green-600 font-semibold">À propos</a></li>
+    </ul>
+  </nav> -->
+   
+
+   <!-- <nav class="navbar">
+    <div class="navbar-container">
+      <div class="logo">MonLogo</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="propos.html">A propos</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="profil.html">Mon Profil</a></li>
+      </ul>
+    </div>
+  </nav>  -->
+
+  <!-- Profil Section -->
+  <section class="profile-section">
+    <div class="profile-container">
+      <h1>Mon Profil</h1>
+      
+      <!-- Photo du profil -->
+      <div class="profile-photo">
+        <img src="images/default-profile.png" alt="Photo de profil" id="profile-image" />
+        <input type="file" id="upload-photo" onchange="changeProfileImage()" />
+      </div>
+
+      <!-- Formulaire de modification -->
+      <form class="profile-form" id="profile-form">
+        <label for="name">Nom Complet</label>
+        <input type="text" id="name" value="John Doe" required />
+
+        <label for="email">Email</label>
+        <input type="email" id="email" value="john.doe@example.com" required />
+
+        <label for="phone">Téléphone</label>
+        <input type="tel" id="phone" value="0123456789" required />
+
+        <label for="password">Nouveau Mot de Passe</label>
+        <input type="password" id="password" placeholder="Nouveau mot de passe" />
+
+        <button type="submit" class="btn-save">Enregistrer les modifications</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- déconnexion -->
+  <button id="logout-btn" class="btn-logout">Se déconnecter</button>
+
+
+  <!-- Footer -->
+
+  
+  <footer class="bg-gray-100 py-6 text-center text-gray-600 text-sm">
+    &copy; 2025 TaPlateforme – Tous droits réservés
+  </footer>
+
+  <!-- <footer>
+    <p>&copy; 2025 TaPlateforme – Tous droits réservés</p>
+  </footer> -->
+
+  <script src="script.js"></script>
+  
+  
+</body>
+</html>
